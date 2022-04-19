@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Server.Services
 {
-    public class Service : IRepository
+    public class Service : IRepository 
     {
         private readonly ApiContext _context;
 
@@ -19,6 +19,11 @@ namespace Server.Services
         public Task<T> GetByIdAsync<T>(Guid id) where T : BaseEntity
         {
             return _context.Set<T>().SingleOrDefaultAsync(e => e.Id == id);
+        }
+
+        public Task<T> GetByEmailAsync<T>(string email) where T : BaseEntity
+        {
+            return _context.Set<T>().SingleOrDefaultAsync(e => e.Email == email);
         }
 
         public Task<List<T>> ListAsync<T>() where T : BaseEntity
@@ -51,6 +56,5 @@ namespace Server.Services
             entity.Deletada = true;
             await UpdateAsync(entity);
         }
-
     }
 }

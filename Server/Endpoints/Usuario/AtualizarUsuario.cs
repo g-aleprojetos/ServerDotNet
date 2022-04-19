@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Server.CriptografiaForm;
 using Server.Endpoints.UsuarioForm.request;
 using Server.Endpoints.UsuarioForm.Response;
 using Server.Entities;
@@ -32,7 +33,10 @@ namespace Server.Endpoints.UsuarioForm
             {
                 var usuario = await _repository.GetByIdAsync<Usuario>(request.Id);
                 if (usuario == null || usuario.Deletada == true) return NotFound($"Não foi encontrado o usuario do id= {request.Id}");
-                usuario.AtualizarUsuario(request.Nome, request.Senha, request.Email);
+
+                var senhaCriptografada = new Criptografia();
+
+                usuario.AtualizarUsuario(request.Nome, senhaCriptografada.Criptografar(request.Senha), request.Email);
                 await _repository.UpdateAsync(usuario);
                 var response = new UsuarioResponse
                 {

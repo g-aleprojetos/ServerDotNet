@@ -46,6 +46,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "DotNetOpenAuth.Core": {
+              "target": "Package",
+              "version": "[4.3.4.13329, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[10.0.1, )"
@@ -85,6 +89,10 @@
             "System.Threading.Tasks": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "XAct.Core.PCL": {
+              "target": "Package",
+              "version": "[0.0.5014, )"
             }
           },
           "imports": [
