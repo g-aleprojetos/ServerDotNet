@@ -27,7 +27,7 @@ namespace Server.Endpoints.UsuarioForm
          OperationId = "Usuario.AtualizaUsuario",
          Tags = new[] { "UsuarioEndpoints" })
          ]
-        public async Task<ActionResult> Atualizar(UsuarioRequest request)
+        public async Task<ActionResult<UsuarioResponse>> Atualizar(UsuarioRequest request)
         {
             try
             {

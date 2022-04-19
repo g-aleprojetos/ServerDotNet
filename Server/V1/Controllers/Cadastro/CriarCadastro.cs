@@ -27,7 +27,7 @@ namespace Server.Endpoints.CadastroForm
          OperationId = "Cadasro.Criar",
          Tags = new[] { "CadastroEndpoints" })
 ]
-        public async Task<ActionResult> CriarUsuario(NovoUsuario request)
+        public async Task<ActionResult<NovoUsuarioResponse>> CriarUsuario(NovoUsuario request)
         {
             try
             {

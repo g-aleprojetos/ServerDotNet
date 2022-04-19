@@ -25,7 +25,7 @@ namespace Server.Endpoints.UsuarioForm
          OperationId = "Usuario.BuscarUsuario",
          Tags = new[] { "UsuarioEndpoints" })
          ]
-        public async Task<ActionResult<Usuario>> GetUsuario(Guid id)
+        public async Task<ActionResult<UsuarioResponse>> GetUsuario(Guid id)
         {
             try
             {
