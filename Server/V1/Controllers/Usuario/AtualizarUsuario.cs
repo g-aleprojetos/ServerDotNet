@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Server.CriptografiaForm;
 using Server.Endpoints.UsuarioForm.request;
 using Server.Endpoints.UsuarioForm.Response;
 using Server.Entities;
@@ -26,13 +27,16 @@ namespace Server.Endpoints.UsuarioForm
          OperationId = "Usuario.AtualizaUsuario",
          Tags = new[] { "UsuarioEndpoints" })
          ]
-        public async Task<ActionResult> Atualizar(UsuarioRequest request)
+        public async Task<ActionResult<UsuarioResponse>> Atualizar(UsuarioRequest request)
         {
             try
             {
                 var usuario = await _repository.GetByIdAsync<Usuario>(request.Id);
                 if (usuario == null || usuario.Deletada == true) return NotFound($"Não foi encontrado o usuario do id= {request.Id}");
-                usuario.AtualizarUsuario(request.Nome, request.Senha, request.Email);
+
+                var senhaCriptografada = new Criptografia();
+
+                usuario.AtualizarUsuario(request.Nome, senhaCriptografada.Criptografar(request.Senha), request.Email);
                 await _repository.UpdateAsync(usuario);
                 var response = new UsuarioResponse
                 {

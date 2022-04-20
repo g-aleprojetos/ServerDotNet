@@ -26,7 +26,7 @@ namespace Server.Endpoints.UsuarioForm
             OperationId = "Usuario.BuscarTodosUsuarios",
             Tags = new[] { "UsuarioEndpoints" })
         ]
-        public async Task<ActionResult<IAsyncEnumerable<Usuario>>> GetTodosUsuarios()
+        public async Task<ActionResult<IAsyncEnumerable<UsuarioResponse>>> GetTodosUsuarios()
         {
             try
             {
