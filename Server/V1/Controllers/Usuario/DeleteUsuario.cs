@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Entities;
 using Server.Services.Interfaces;
@@ -19,6 +20,7 @@ namespace Server.Endpoints.UsuarioForm
         }
 
         [HttpDelete("/Usuario/id:Guid")]
+        [AllowAnonymous]
         [SwaggerOperation(
          Summary = "Deletar Usuario",
          Description = "Deletar Usuario",

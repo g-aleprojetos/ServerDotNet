@@ -23,7 +23,7 @@ namespace Server.Services
 
         public Task<T> GetByEmailAsync<T>(string email) where T : BaseEntity
         {
-            return _context.Set<T>().SingleOrDefaultAsync(e => e.Email == email);
+            return _context.Set<T>().SingleOrDefaultAsync(e => e.Email == email && e.Deletada != true);
         }
 
         public Task<List<T>> ListAsync<T>() where T : BaseEntity

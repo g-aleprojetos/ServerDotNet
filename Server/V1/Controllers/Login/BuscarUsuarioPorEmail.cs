@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Server.CriptografiaForm;
 using Server.Endpoints.UsuarioForm.request;
 using Server.Endpoints.UsuarioForm.Response;
@@ -20,6 +21,7 @@ namespace Server.Endpoints.Login
         }
 
         [HttpGet("/Login/{Email}/{Senha}")]
+        [AllowAnonymous]
         [SwaggerOperation(
          Summary = "Buscar Usuario pelo nome",
          Description = "Buscar um único Usuario pelo nome",
@@ -29,9 +31,10 @@ namespace Server.Endpoints.Login
         public async Task<ActionResult<LoginResponse>> GetUsuarioPorEmail([FromRoute] UsuarioLoginRequest request)
         {
             try
-            {
+            {//pegar lista de email depois verificar se algum esta ativo
                 var usuario = await _repository.GetByEmailAsync<Usuario>(request.Email);
                 if (usuario == null || usuario.Deletada == true) return NotFound($"Não foi encontrado o usuario do Email= {request.Email}");
+
 
                 var senhaCriptografada = new Criptografia();
                 if (usuario.Senha == senhaCriptografada.Criptografar(request.Senha))
@@ -41,6 +44,8 @@ namespace Server.Endpoints.Login
                         Id = usuario.Id,
                         Nome = usuario.Nome,
                         Email = usuario.Email,
+                        Acesso = usuario.Acesso,
+                        Token = TokenService.GenerateToken(usuario),
                     };
                     return Ok(response);
                 }

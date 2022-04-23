@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.CriptografiaForm;
 using Server.Endpoints.UsuarioForm.request;
@@ -21,6 +22,7 @@ namespace Server.Endpoints.UsuarioForm
         }
 
         [HttpPut("/Usuario/id:Guid")]
+        [AllowAnonymous]
         [SwaggerOperation(
          Summary = "Atualiza Usuario",
          Description = "Atualiza Usuario",
@@ -33,10 +35,10 @@ namespace Server.Endpoints.UsuarioForm
             {
                 var usuario = await _repository.GetByIdAsync<Usuario>(request.Id);
                 if (usuario == null || usuario.Deletada == true) return NotFound($"Não foi encontrado o usuario do id= {request.Id}");
-
+                if (request.Acesso == Usuario.TipoAcesso.NULO) request.Acesso = usuario.Acesso;
                 var senhaCriptografada = new Criptografia();
 
-                usuario.AtualizarUsuario(request.Nome, senhaCriptografada.Criptografar(request.Senha), request.Email);
+                usuario.AtualizarUsuario(request.Nome, senhaCriptografada.Criptografar(request.Senha), request.Email, request.Avatar,request.Acesso);
                 await _repository.UpdateAsync(usuario);
                 var response = new UsuarioResponse
                 {
@@ -44,6 +46,7 @@ namespace Server.Endpoints.UsuarioForm
                     Nome = usuario.Nome,
                     Senha = usuario.Senha,
                     Email = usuario.Email,
+                    Acesso = usuario.Acesso,
                 };
                 return Ok(response);
             }

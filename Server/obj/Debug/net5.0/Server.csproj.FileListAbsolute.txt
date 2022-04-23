@@ -303,3 +303,4 @@ C:\Users\alexandre.sgoncalves\Desktop\ServerDotNet\Server\obj\Debug\net5.0\Serve
 C:\Users\alexandre.sgoncalves\Desktop\ServerDotNet\Server\bin\Debug\net5.0\Microsoft.Practices.ServiceLocation.dll
 C:\Users\alexandre.sgoncalves\Desktop\ServerDotNet\Server\bin\Debug\net5.0\XAct.Core.PCL.dll
 C:\Users\alexandre.sgoncalves\Desktop\ServerDotNet\Server\bin\Debug\net5.0\DotNetOpenAuth.Core.dll
+C:\Users\alexandre.sgoncalves\Desktop\ServerDotNet\Server\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

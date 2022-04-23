@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Server.Endpoints.UsuarioForm.Response;
 using Server.Entities;
 using Server.Services.Interfaces;
@@ -20,6 +21,8 @@ namespace Server.Endpoints.UsuarioForm
         }
 
         [HttpGet("/Usuario")]
+        [AllowAnonymous]
+       // [Authorize(Roles = "manager")]
         [SwaggerOperation(
             Summary = "Buscar todos Usuarios",
             Description = "Buscar Usuarios",
@@ -30,7 +33,8 @@ namespace Server.Endpoints.UsuarioForm
         {
             try
             {
-                var usuarios = await _repository.ListAsync<Usuario>();                
+                var usuarios = await _repository.ListAsync<Usuario>();  
+                if(usuarios.Count == 0) return NotFound("Não foi encontrado nenhum usuário");
                 usuarios = usuarios.Where(x => x.Deletada != true).ToList();
                 var response = usuarios.Select(x => new UsuarioResponse()
                 {
@@ -38,6 +42,8 @@ namespace Server.Endpoints.UsuarioForm
                     Nome = x.Nome,
                     Senha = x.Senha,
                     Email = x.Email,
+                    Avatar = x.Avatar,
+                    Acesso = x.Acesso,
                 }).ToList();
                 return Ok(response);
             }

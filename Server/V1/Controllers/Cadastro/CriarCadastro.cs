@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Server.CriptografiaForm;
 using Server.Endpoints.UsuarioForm.request;
 using Server.Endpoints.UsuarioForm.Response;
 using Server.Entities;
 using Server.Services.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Server.Endpoints.CadastroForm
@@ -21,6 +21,7 @@ namespace Server.Endpoints.CadastroForm
         }
 
         [HttpPost("/Cadastro")]
+        [AllowAnonymous]
         [SwaggerOperation(
          Summary = "Cria um cadastro de Usuario",
          Description = "Cria cadastro de Usuario",
@@ -31,12 +32,14 @@ namespace Server.Endpoints.CadastroForm
         {
             try
             {
-                var usuario = await _repository.ListAsync<Usuario>();
-                usuario = usuario.Where(x => x.Deletada != true).ToList();
-                if (usuario.Where(y => y.Email == request.Email).Any()) return BadRequest("Email já cadatrado");
-
+                if (request.Nome == null || request.Email == null || request.Senha == null) return BadRequest("Nome, Email e Senha tem que ser preenchido");
+                var usuario = await _repository.GetByEmailAsync<Usuario>(request.Email);
+                if (usuario != null)
+                {
+                    if (request.Email == usuario.Email && usuario.Deletada != true) return NotFound("Email já cadatrado");
+                }
                 var senhaCriptografada = new Criptografia();
-                var usuarioNovo = new Usuario(request.Nome, senhaCriptografada.Criptografar(request.Senha), request.Email);
+                var usuarioNovo = new Usuario(request.Nome, senhaCriptografada.Criptografar(request.Senha), request.Email, request.Avatar, request.Acesso);
                 var usuarioCriado = await _repository.AddAsync(usuarioNovo);
                 return Ok(NovoUsuarioResponse.Response(usuarioCriado));
             }
