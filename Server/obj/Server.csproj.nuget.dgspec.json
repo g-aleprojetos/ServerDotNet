@@ -48,7 +48,7 @@
           "dependencies": {
             "Ardalis.ApiEndpoints": {
               "target": "Package",
-              "version": "[4.0.1, )"
+              "version": "[2.0.0, )"
             },
             "Ardalis.EFCore.Extensions": {
               "target": "Package",
