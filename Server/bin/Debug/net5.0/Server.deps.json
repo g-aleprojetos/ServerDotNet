@@ -345,6 +345,9 @@
         }
       },
       "DotNetOpenAuth.Core/4.3.4.13329": {
+        "dependencies": {
+          "Microsoft.Net.Http": "2.0.20505"
+        },
         "runtime": {
           "lib/net45-full/DotNetOpenAuth.Core.dll": {
             "assemblyVersion": "4.3.0.0",
@@ -978,6 +981,17 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
+        }
+      },
+      "Microsoft.Net.Http/2.0.20505": {
+        "runtime": {
+          "lib/net40/System.Net.Http.WebRequest.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net40/System.Net.Http.WebRequest.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
@@ -3929,6 +3943,13 @@
       "sha512": "sha512-C3OqR3QfBQ7wcC7yAsdMQqay87OsV6yWPYG/Ai3n7dvmWIGkouQhXoVxRP0xz3cAFL4hxZBXyw4aLTC421PaMg==",
       "path": "microsoft.identitymodel.tokens/5.6.0",
       "hashPath": "microsoft.identitymodel.tokens.5.6.0.nupkg.sha512"
+    },
+    "Microsoft.Net.Http/2.0.20505": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XRsKQP2XEd/DGLerVsU+T2pKQGTFc9ctWsIVbRblL/y+jT/BUo28aJ5mWN40oAeUwwbpXshAc8uO/LRscWav9A==",
+      "path": "microsoft.net.http/2.0.20505",
+      "hashPath": "microsoft.net.http.2.0.20505.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",

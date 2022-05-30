@@ -19,14 +19,14 @@ namespace Server.Endpoints.Login
             _repository = repository;
         }
 
-        [HttpGet("/Login/{Email}/{Senha}")]
+        [HttpPost("/Login")]
         [SwaggerOperation(
          Summary = "Buscar Usuario pelo nome",
          Description = "Buscar um único Usuario pelo nome",
          OperationId = "Login.BuscarUsuario",
          Tags = new[] { "LoginEndpoints" })
          ]
-        public async Task<ActionResult<LoginResponse>> GetUsuarioPorEmail([FromRoute] UsuarioLoginRequest request)
+        public async Task<ActionResult<LoginResponse>> GetUsuarioPorEmail(UsuarioLoginRequest request)
         {
             try
             {
