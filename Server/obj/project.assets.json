@@ -2065,10 +2065,10 @@
           "build/Swashbuckle.AspNetCore.props": {}
         }
       },
-      "Swashbuckle.AspNetCore.Annotations/6.3.0": {
+      "Swashbuckle.AspNetCore.Annotations/6.4.0": {
         "type": "package",
         "dependencies": {
-          "Swashbuckle.AspNetCore.SwaggerGen": "6.3.0"
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.4.0"
         },
         "compile": {
           "lib/net5.0/Swashbuckle.AspNetCore.Annotations.dll": {}
@@ -2077,7 +2077,7 @@
           "lib/net5.0/Swashbuckle.AspNetCore.Annotations.dll": {}
         }
       },
-      "Swashbuckle.AspNetCore.Swagger/6.3.0": {
+      "Swashbuckle.AspNetCore.Swagger/6.4.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.OpenApi": "1.2.3"
@@ -2092,10 +2092,10 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Swashbuckle.AspNetCore.SwaggerGen/6.3.0": {
+      "Swashbuckle.AspNetCore.SwaggerGen/6.4.0": {
         "type": "package",
         "dependencies": {
-          "Swashbuckle.AspNetCore.Swagger": "6.3.0"
+          "Swashbuckle.AspNetCore.Swagger": "6.4.0"
         },
         "compile": {
           "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
@@ -7003,10 +7003,10 @@
         "swashbuckle.aspnetcore.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.Annotations/6.3.0": {
-      "sha512": "MylnnwqP0OwHUnYAKc3v5jBlWHWLBoi5Jw2d+1Tw2ozPJGIBMko0XIlgBURMpEhV7vmIqjXEQ+zk5iDlFRfLIg==",
+    "Swashbuckle.AspNetCore.Annotations/6.4.0": {
+      "sha512": "frMa+jf9YVpCiMN+mFehfEdgQ7QEqLrhNssNmPwAgfXbdLwedQiVpBpoq+20dImdeNbN7RgY12soH2DvEzSaqw==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.annotations/6.3.0",
+      "path": "swashbuckle.aspnetcore.annotations/6.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7022,14 +7022,14 @@
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Annotations.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Annotations.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Annotations.xml",
-        "swashbuckle.aspnetcore.annotations.6.3.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.annotations.6.4.0.nupkg.sha512",
         "swashbuckle.aspnetcore.annotations.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.Swagger/6.3.0": {
-      "sha512": "+taHh7kowNF+tQo9a82avwDtfqhAC82jTZTqZwypDpauPvwavyVtJ7+ERxE+yDb6U/nOcMicMmDAGbqbJ2Pc+Q==",
+    "Swashbuckle.AspNetCore.Swagger/6.4.0": {
+      "sha512": "nl4SBgGM+cmthUcpwO/w1lUjevdDHAqRvfUoe4Xp/Uvuzt9mzGUwyFCqa3ODBAcZYBiFoKvrYwz0rabslJvSmQ==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swagger/6.3.0",
+      "path": "swashbuckle.aspnetcore.swagger/6.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7045,14 +7045,14 @@
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "swashbuckle.aspnetcore.swagger.6.3.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swagger.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.SwaggerGen/6.3.0": {
-      "sha512": "8PRLtqCXTIfc+W/pcyab8GqHzHuFRZ3L+9/fix/ssVknwy/pbgkOqgzq9DGWfKz+MZReIp5ajZLR7bXioDdacQ==",
+    "Swashbuckle.AspNetCore.SwaggerGen/6.4.0": {
+      "sha512": "lXhcUBVqKrPFAQF7e/ZeDfb5PMgE8n5t6L5B6/BQSpiwxgHzmBcx8Msu42zLYFTvR5PIqE9Q9lZvSQAcwCxJjw==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggergen/6.3.0",
+      "path": "swashbuckle.aspnetcore.swaggergen/6.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7068,7 +7068,7 @@
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "swashbuckle.aspnetcore.swaggergen.6.3.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggergen.nuspec"
       ]
     },
@@ -12399,15 +12399,14 @@
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.16",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "Swashbuckle.AspNetCore >= 5.6.3",
-      "Swashbuckle.AspNetCore.Annotations >= 6.3.0",
+      "Swashbuckle.AspNetCore.Annotations >= 6.4.0",
       "System.Threading.Tasks >= 4.3.0",
       "XAct.Core.PCL >= 0.0.5014"
     ]
   },
   "packageFolders": {
     "C:\\Users\\asg20\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -12419,14 +12418,12 @@
       "outputPath": "C:\\Users\\asg20\\Desktop\\ServerDotNet\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\asg20\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -12521,7 +12518,7 @@
           },
           "Swashbuckle.AspNetCore.Annotations": {
             "target": "Package",
-            "version": "[6.3.0, )"
+            "version": "[6.4.0, )"
           },
           "System.Threading.Tasks": {
             "target": "Package",
@@ -12550,7 +12547,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },

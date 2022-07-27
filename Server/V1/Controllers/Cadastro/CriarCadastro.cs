@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Ardalis.ApiEndpoints;
+﻿using Ardalis.ApiEndpoints;
+using Microsoft.AspNetCore.Mvc;
 using Server.CriptografiaForm;
 using Server.Endpoints.UsuarioForm.request;
 using Server.Endpoints.UsuarioForm.Response;
@@ -7,12 +7,12 @@ using Server.Entities;
 using Server.Services.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Server.Endpoints.CadastroForm
 {
-      public class CriarCadastro : BaseAsyncEndpoint<NovoUsuario, NovoUsuarioResponse>
+    public class CriarCadastro : BaseAsyncEndpoint<NovoUsuario, NovoUsuarioResponse>
     {
         private IRepository _repository;
         public CriarCadastro(IRepository repository)

@@ -39,7 +39,7 @@ namespace Server
                     Contact = new OpenApiContact
                     {
                         Name = "Alexandre Gonçalves",
-                        Email = "g.aleprojetos@gmail.com",
+                        Email = "3413992@alunouninter.com",
                     },
                 });
                 c.EnableAnnotations();

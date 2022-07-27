@@ -1,5 +1,4 @@
-﻿using Server.Entities;
-using System;
+﻿using System;
 
 namespace Server.Endpoints.UsuarioForm.Response
 {
